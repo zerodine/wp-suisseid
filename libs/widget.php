@@ -12,6 +12,8 @@ class WPSUISSEID_Widget extends WP_Widget {
 	}
 
 	public function widget( $args, $instance ) {
+
+		
 		$admin = new WPSUISSEID_Admin(true);
 		
 		$request = new WPSUISSEID_Request();
@@ -27,4 +29,3 @@ class WPSUISSEID_Widget extends WP_Widget {
 }
 
 add_action( 'widgets_init', create_function( '', 'register_widget( "WPSUISSEID_Widget" );') );
-#register_widget ( 'WPSUISSEID_Widget' );

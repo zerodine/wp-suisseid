@@ -15,7 +15,7 @@ class WPSUISSEID_Request {
 		$authnRequest->setAttribute("ID", $this->gen_uuid());
 		$authnRequest->setAttribute("Version", "2.0");
 		$authnRequest->setAttribute("IssueInstant", "2012-12-18T09:00:00");
-		$authnRequest->setAttribute("AssertionConsumerServiceURL", get_admin_url());
+		$authnRequest->setAttribute("AssertionConsumerServiceURL", get_bloginfo('url').'/wp-login.php');#get_admin_url()); #);
 		
 		$issuer = $doc->createElementNS('urn:oasis:names:tc:SAML:2.0:assertion', 'saml2:Issuer');
 		$issuer->appendChild($doc->createTextNode($admin->get_option('spname')));
